@@ -6,7 +6,7 @@ const {
   updateTask,
   deleteTask,
   toggleTaskCompletion,
-} = require('../controllers/taskController');
+} = require('../controllers/taskcontroller');
 const auth = require('../middleware/auth');
 
 router.get('/', auth, getTasks);
