@@ -21,7 +21,7 @@ exports.deleteTask = async (req, res) => {
   res.json({ message: 'Task deleted' });
 };
 
-// ✅ Toggle completion status
+
 exports.toggleTaskCompletion = async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
