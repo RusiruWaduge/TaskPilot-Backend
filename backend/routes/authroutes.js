@@ -1,12 +1,12 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); // Ensure path is correct
+const User = require('../models/User'); 
 const authMiddleware = require('../middleware/auth');
 const router = express.Router();
 
 
-// Register
+
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -21,7 +21,6 @@ router.post('/register', async (req, res) => {
 });
 
 
-// Login
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -44,7 +43,7 @@ router.get('/me', authMiddleware, (req, res) => {
     res.status(200).json({
       success: true,
       message: 'User authenticated successfully.',
-      user: req.user // Contains email
+      user: req.user 
     });
   } catch (error) {
     console.error('Error getting user:', error);
