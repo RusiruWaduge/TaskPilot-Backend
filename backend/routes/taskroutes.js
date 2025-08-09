@@ -11,10 +11,10 @@ const auth = require('../middleware/auth');
 
 router.get('/', auth, getTasks);
 router.post('/', auth, addTask);
-router.put('/:id', auth, updateTask); // ✅ fixed route
+router.put('/:id', auth, updateTask); 
 router.delete('/:id', auth, deleteTask);
 
-// ✅ Add toggle completion route
+
 router.patch('/:id/toggle', auth, toggleTaskCompletion);
 
 module.exports = router;
